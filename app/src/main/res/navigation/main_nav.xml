@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/authFragment">
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="quizzo.app.ui.auth.AuthFragment"
+        android:label="auth_fragment"
+        tools:layout="@layout/auth_fragment" >
+        <action
+            android:id="@+id/action_authFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="quizzo.app.ui.home.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_categoryPage"
+            app:destination="@id/categoryPage" />
+        <action
+            android:id="@+id/action_homeFragment_to_authFragment"
+            app:destination="@id/authFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/main_nav"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_matchMakingFragment"
+            app:destination="@id/matchMakingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singlePlayerFragment"
+        android:name="quizzo.app.ui.singleplayer.SinglePlayerFragment"
+        android:label="single_player_fragment"
+        tools:layout="@layout/single_player_fragment" >
+        <action
+            android:id="@+id/action_singlePlayerFragment_to_singlePlayerResultFragment"
+            app:destination="@id/singlePlayerResultFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="categoryName"
+            app:argType="string"
+            android:defaultValue="all" />
+    </fragment>
+    <fragment
+        android:id="@+id/singlePlayerResultFragment"
+        android:name="quizzo.app.ui.singleplayer.result.SinglePlayerResultFragment"
+        android:label="single_player_result_fragment"
+        tools:layout="@layout/single_player_result_fragment" >
+        <action
+            android:id="@+id/action_singlePlayerResultFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/main_nav"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="correctAnswers"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="categoryName"
+            app:argType="string"
+            android:defaultValue="RANDOM" />
+        <action
+            android:id="@+id/action_singlePlayerResultFragment_to_categoryPage"
+            app:destination="@id/categoryPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="quizzo.app.ui.history.HistoryFragment"
+        android:label="history_fragment"
+        tools:layout="@layout/history_fragment" />
+    <fragment
+        android:id="@+id/categoryPage"
+        android:name="quizzo.app.ui.category.CategoryPage"
+        android:label="category_page_fragment"
+        tools:layout="@layout/category_page_fragment" >
+        <action
+            android:id="@+id/action_categoryPage_to_singlePlayerFragment"
+            app:destination="@id/singlePlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchMakingFragment"
+        android:name="quizzo.app.ui.multiplayer.matchmaking.MatchMakingFragment"
+        android:label="match_making_fragment"
+        tools:layout="@layout/match_making_fragment" >
+        <action
+            android:id="@+id/action_matchMakingFragment_to_multiplayerFragment"
+            app:destination="@id/multiplayerFragment"
+            app:launchSingleTop="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiplayerFragment"
+        android:name="quizzo.app.ui.multiplayer.match.MultiplayerFragment"
+        android:label="multiplayer_fragment"
+        tools:layout="@layout/multiplayer_fragment" >
+        <action
+            android:id="@+id/action_multiplayerFragment_to_multiplayerResultFragment"
+            app:destination="@id/multiplayerResultFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiplayerResultFragment"
+        android:name="quizzo.app.ui.multiplayer.result.MultiplayerResultFragment"
+        android:label="multiplayer_result_fragment"
+        tools:layout="@layout/multiplayer_result_fragment" >
+        <action
+            android:id="@+id/action_multiplayerResultFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/main_nav"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="correctAnswers"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+</navigation>
