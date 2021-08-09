@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "687374779661",
+    "project_id": "inglizceeogrenwebapp",
+    "storage_bucket": "inglizceeogrenwebapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687374779661:android:1d2fe165c5b107790d9c44",
+        "android_client_info": {
+          "package_name": "com.woxyd.ingilizceogren"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "687374779661-0fi40gkskp6n2g3j6bjha2p8frt1n2q2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPM5w_MdxWZFesBMDnv1T4kcqSa75wDIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "687374779661-0fi40gkskp6n2g3j6bjha2p8frt1n2q2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
